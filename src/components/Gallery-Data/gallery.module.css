@@ -1,0 +1,429 @@
+.container {
+  width: auto;
+  padding: 130px 60px 80px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #7a7a7a;
+}
+
+.toggleBtn {
+  padding: 12px 35px;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.toggleBtn:hover {
+  background: #f2f2f2;
+}
+
+.galleryWrapper {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s ease-in-out;
+  margin-top: 20px;
+}
+
+.show {
+  max-height: 500px;
+}
+
+.gallery {
+  display: flex;
+}
+
+.gallery img {
+    width: 100%;
+    width: 183px;
+    height: 178px;
+    object-fit: cover;
+}
+
+
+/* Gallery Css */
+
+.galleryContainer {
+  column-count: 6;
+  column-gap: 15px;
+  padding: 20px;
+}
+
+.imageBox {
+  width: 100%;
+  margin-bottom: 15px;
+  break-inside: avoid;
+  background: #f3f3f3;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.imageBox img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .galleryContainer {
+    column-count: 5;
+  }
+}
+
+@media (max-width: 1200px) {
+  .galleryContainer {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 992px) {
+  .galleryContainer {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryContainer {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryContainer {
+    column-count: 1;
+  }
+}
+
+
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 5px;
+}
+
+.imageBox {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.imageBox:hover img {
+  transform: scale(1.05);
+}
+
+/* Popup Overlay */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popupImage {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #303030;
+  border: 1px solid #f4f4f4;
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Slider Buttons */
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.prevBtn {
+  left: 40px;
+}
+
+.nextBtn {
+  right: 40px;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+  color: #ffb400;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+  .galleryContainer {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+.container {
+  width: auto;
+  padding: 90px 15px 50px;
+}
+.headerRow {
+  flex-wrap: wrap;
+}
+.left {
+  max-width: 100%;
+}
+.title {
+  font-size: 28px;
+}
+
+.galleryContainer {
+    padding-bottom: 40px;
+  }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+.gallery {
+  overflow: hidden; 
+}
+
+.img {
+  transition:
+    transform 0.6s ease,
+    flex 0.6s ease,
+    box-shadow 0.6s ease,
+    opacity 0.4s ease;
+}
+
+.gallery:hover .img {
+  flex: 0.7;
+  opacity: 0.6;
+}
+
+.gallery .img:hover {
+  flex: 1.8;              
+  transform: scale(1.15); 
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Mobile par hover disable */
+@media (max-width: 768px) {
+  .gallery {
+    overflow: visible;
+  }
+
+  .gallery:hover .img,
+  .gallery .img:hover {
+    flex: unset;
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+}
+
+
+
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+
+.container {
+  width: auto;
+  padding: 110px 25px 30px;
+  margin: 0 auto;
+}
+.headerRow {
+  flex-wrap: wrap;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MASONRY (Pinterest Style) */
+.masonry {
+  column-count: 6;
+  column-gap: 16px;
+  padding: 20px;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.item:hover img {
+  transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popupImg {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
